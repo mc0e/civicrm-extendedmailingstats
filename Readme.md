@@ -1,4 +1,4 @@
-# MailingStats CiviCRM extension
+# ExtendedMailingStats CiviCRM extension
 
 This extension provides extended summary reports on CiviCRM mailings
 
@@ -7,7 +7,7 @@ This extension provides extended summary reports on CiviCRM mailings
 Stats are collected by a cron job rather than when the report is collected.  The cron job 
 needs to be set up to run a command along the lines of:
 
-    drush -r /var/www/example.org/htdocs -l example.org -u 1 civicrm-api mailingstats.cron auth=0 -y
+    drush -r /var/www/example.org/htdocs -l example.org -u 1 civicrm-api extendedmailingstats.cron auth=0 -y
 
 The cron job should run as the web server user.
 
