@@ -54,7 +54,7 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
       'dao' => 'CRM_Mailing_DAO_Mailing',
       'fields' => array(
         'mailing_id' => array(
-          'title' => ts(''),
+          'title' => ts('Mailing ID'),
           'required' => TRUE,
         ),
         'mailing_name' => array(
@@ -173,6 +173,16 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
           'default' => 'this.year',
           'operatorType' => CRM_Report_Form::OP_DATE,
           'type' => CRM_Utils_Type::T_DATE,
+        ),
+        'recipients' => array(
+          'title' => ts('Number of Recipients'),
+          'operatorType' => CRM_Report_Form::OP_INT,
+          'type' => CRM_Utils_Type::T_INT,
+        ),
+        'clicked_contribution_page' => array(
+          'title' => ts('clicked_contribution_page'),
+          'operatorType' => CRM_Report_Form::OP_INT,
+          'type' => CRM_Utils_Type::T_INT,
         ),
       ),
     );
