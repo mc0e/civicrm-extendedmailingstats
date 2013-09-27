@@ -8,6 +8,24 @@ This is currently an Alpha release.  The semantics of the columns are still bein
 
 Third party testing and feedback are encouraged.
 
+## Installation
+
+You can install this from github by doing:
+
+    cd [your civicrm extensions directory]
+    git clone git@github.com:mc0e/civicrm-extendedmailingstats.git au.org.greens.extendedmailingstats
+
+You will then need to enable the extension module in civicrm by going to using the civicrm admin page at:
+
+    'Administer' -> 'Customise data and Screens' -> 'Manage Extensions'
+
+You then go to:
+
+    'Reports' -> 'Create Reports from Templates'
+
+And you'll see  'Extended Mailing Stats' in the list.  
+
+
 ## Cron job setup
 
 Stats are collected by a cron job rather than when the report is collected.  The cron job 
