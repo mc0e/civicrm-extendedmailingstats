@@ -186,11 +186,6 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
         ),
       ),
     );
-
-
-
-
-
     parent::__construct();
   }
 
@@ -238,7 +233,7 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
                   $top_table_column = explode('.', $field['statistics']['top']);
 
                   $select[] = "CONCAT(round(
-                                        count(DISTINCT {$this->_columns[$top_table_column[0]]['fields'][$top_table_column[1]]['dbAlias']}) / 
+                                        count(DISTINCT {$this->_columns[$top_table_column[0]]['fields'][$top_table_column[1]]['dbAlias']}) /
                                         count(DISTINCT {$this->_columns[$base_table_column[0]]['fields'][$base_table_column[1]]['dbAlias']}) * 100, 2
                                     ), '%') as {$tableName}_{$fieldName}";
                   break;
