@@ -191,6 +191,25 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
         ),
       ),
     );
+
+    $this->_columns['civicrm_mailing'] = array(
+      'fields' => array(
+        'mailing_campaign_id' => array(
+          'title' => ts('Campaign'),
+          'name' => 'campaign_id',
+          'type' => CRM_Utils_Type::T_INT,
+        ),
+      ),
+      'filters' => array(
+        'mailing_campaign_id' => array(
+          'title' => ts('Campaign'),
+          'name' => 'campaign_id',
+          'operatorType' => CRM_Report_Form::OP_MULTISELECT,
+          'type' => CRM_Utils_Type::T_INT,
+          'options' => CRM_Mailing_BAO_Mailing::buildOptions('campaign_id'),
+        ),
+      ));
+
     parent::__construct();
   }
 
@@ -266,7 +285,10 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
   function from() {
 
     $this->_from = "
-        FROM agc_report_mailing_stats {$this->_aliases['agc_report_mailing_stats']}";
+      FROM agc_report_mailing_stats {$this->_aliases['agc_report_mailing_stats']}
+      LEFT JOIN civicrm_mailing {$this->_aliases['civicrm_mailing']} ON
+        {$this->_aliases['agc_report_mailing_stats']}.mailing_id = {$this->_aliases['civicrm_mailing']}.id
+      ";
     // need group by and order by
 
     //print_r($this->_from);
@@ -387,6 +409,11 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
         $entryFound = TRUE;
       }
 
+      if (!empty($row['civicrm_mailing_mailing_campaign_id'])) {
+        $campaigns = CRM_Mailing_BAO_Mailing::buildOptions('campaign_id');
+        $rows[$rowNum]['civicrm_mailing_mailing_campaign_id'] = $campaigns[$row['civicrm_mailing_mailing_campaign_id']];
+        $entryFound = TRUE;
+      }
 
       // skip looking further in rows, if first row itself doesn't
       // have the column we need
