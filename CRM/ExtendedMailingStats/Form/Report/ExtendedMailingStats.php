@@ -275,7 +275,7 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
   function where() {
     $clauses = array();
     //to avoid the sms listings
-    $clauses[] = "{$this->_aliases['civicrm_mailing']}.sms_provider_id IS NULL";
+    $clauses[] = "{$this->_aliases['agc_report_mailing_stats']}.sms_provider_id IS NULL";
 
     foreach ($this->_columns as $tableName => $table) {
       if (array_key_exists('filters', $table)) {
