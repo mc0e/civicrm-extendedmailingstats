@@ -47,7 +47,12 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
   protected $_charts = array(
     '' => 'Tabular',
     'bar_3dChart' => 'Bar Chart',
-  ); function __construct() {
+  );
+
+  /**
+   * Class constructor.
+   */
+  public function __construct() {
     $this->_columns = array();
 
     $this->_columns['agc_report_mailing_stats'] = array(
@@ -179,8 +184,8 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
           'operatorType' => CRM_Report_Form::OP_INT,
           'type' => CRM_Utils_Type::T_INT,
         ),
-        'clicked_contribution_page' => array(
-          'title' => ts('clicked_contribution_page'),
+        'Clicked_contribution_page' => array(
+          'title' => ts('Clicked Contribution Page?'),
           'operatorType' => CRM_Report_Form::OP_INT,
           'type' => CRM_Utils_Type::T_INT,
         ),
