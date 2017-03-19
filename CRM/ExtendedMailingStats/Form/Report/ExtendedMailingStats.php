@@ -83,11 +83,11 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
           'default' => TRUE,
         ),
         'recipients' => array(
-          'title' => ts('recipients'),
+          'title' => ts('Recipients'),
           'default' => TRUE,
         ),
         'delivered' => array(
-          'title' => ts('delivered'),
+          'title' => ts('Delivered'),
           'default' => TRUE,
         ),
         'send_rate' => array(
@@ -95,65 +95,109 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
           'default' => TRUE,
         ),
         'bounced' => array(
-          'title' => ts('bounced'),
+          'title' => ts('Bounced'),
           'default' => TRUE,
         ),
         'opened' => array(
-          'title' => ts('opened'),
+          'title' => ts('Opened'),
           'default' => TRUE,
         ),
         'unsubscribed' => array(
-          'title' => ts('unsubscribed'),
+          'title' => ts('Unsubscribed'),
           'default' => TRUE,
         ),
         'forwarded' => array(
-          'title' => ts('forwarded'),
+          'title' => ts('Forwarded'),
           'default' => TRUE,
         ),
         'clicked_total' => array(
-          'title' => ts('clicked_total'),
+          'title' => ts('Clicked Total'),
           'default' => TRUE,
         ),
         'clicked_unique' => array(
-          'title' => ts('clicked_unique'),
+          'title' => ts('Clicked Unique'),
           'default' => TRUE,
         ),
         'trackable_urls' => array(
-          'title' => ts('trackable_urls'),
+          'title' => ts('Trackable Urls'),
           'default' => TRUE,
         ),
         'clicked_contribution_page' => array(
-          'title' => ts('clicked_contribution_page'),
+          'title' => ts('Clicked Contribution Page'),
           'default' => TRUE,
         ),
         'contributions_48hrs_count' => array(
-          'title' => ts('contributions_48hrs_count'),
+          'title' => ts('Contributions 48hrs Count'),
           'default' => TRUE,
         ),
         'contributions_48hrs_total' => array(
-          'title' => ts('contributions_48hrs_total'),
+          'title' => ts('Contributions 48hrs Total'),
           'default' => TRUE,
         ),
+	      //Gmail
         'gmail_recipients' => array(
-          'title' => ts('gmail_recipients'),
+          'title' => ts('Gmail Recipients'),
           'default' => TRUE,
         ),
         'gmail_delivered' => array(
-          'title' => ts('gmail_delivered'),
+          'title' => ts('Gmail Delivered'),
           'default' => TRUE,
         ),
         'gmail_opened' => array(
-          'title' => ts('gmail_opened'),
+          'title' => ts('Gmail Opened'),
           'default' => TRUE,
         ),
         'gmail_clicked_total' => array(
-          'title' => ts('gmail_clicked_total'),
+          'title' => ts('Gmail Clicked Total'),
           'default' => TRUE,
         ),
         'gmail_clicked_unique' => array(
-          'title' => ts('gmail_clicked_unique'),
+          'title' => ts('Gmail Clicked Unique'),
           'default' => TRUE,
         ),
+	      //Yahoo
+        'yahoo_recipients' => array(
+	        'title' => ts('Yahoo Recipients'),
+	        'default' => TRUE,
+        ),
+        'yahoo_delivered' => array(
+	        'title' => ts('Yahoo Delivered'),
+	        'default' => TRUE,
+        ),
+        'yahoo_opened' => array(
+	        'title' => ts('Yahoo Opened'),
+	        'default' => TRUE,
+        ),
+        'yahoo_clicked_total' => array(
+	        'title' => ts('Yahoo Clicked Total'),
+	        'default' => TRUE,
+        ),
+        'yahoo_clicked_unique' => array(
+	        'title' => ts('Yahoo Clicked Unique'),
+	        'default' => TRUE,
+        ),
+	      //Hotmail
+        'hotmail_recipients' => array(
+	        'title' => ts('Hotmail Recipients'),
+	        'default' => TRUE,
+        ),
+        'hotmail_delivered' => array(
+	        'title' => ts('Hotmail Delivered'),
+	        'default' => TRUE,
+        ),
+        'hotmail_opened' => array(
+	        'title' => ts('Hotmail Opened'),
+	        'default' => TRUE,
+        ),
+        'hotmail_clicked_total' => array(
+	        'title' => ts('Hotmail Clicked Total'),
+	        'default' => TRUE,
+        ),
+        'hotmail_clicked_unique' => array(
+	        'title' => ts('Hotmail Clicked Unique'),
+	        'default' => TRUE,
+        ),
+	      //
       ),
       'filters' => array(
         'is_completed' => array(

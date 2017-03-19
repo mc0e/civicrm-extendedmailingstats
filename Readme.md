@@ -58,6 +58,16 @@ The cron job should run as the web server user.
  * gmail_opened 
  * gmail_clicked_total 
  * gmail_clicked_unique
+ * yahoo_recipients 
+ * yahoo_delivered 
+ * yahoo_opened 
+ * yahoo_clicked_total 
+ * yahoo_clicked_unique
+ * hotmail_recipients 
+ * hotmail_delivered 
+ * hotmail_opened 
+ * hotmail_clicked_total 
+ * hotmail_clicked_unique
 
 
 ### Mailing Name
@@ -134,11 +144,18 @@ Total Clicks semantics currently lines up pretty well with its name, but may not
 
 "Unique" is vague.  Unique combination of what?  Maybe we want better naming. eg "Click-through Events", "Users Who Clicked", and one that also counts separately clicks on different urls by the same user (how should we label that?).
 
+
 ### gmail_recipients, gmail_delivered, gmail_opened, gmail_clicked_total, gmail_clicked_unique
 
+Exactly as for the non-gmail equivalents, except that reporting is only for those users with "@gmail.com" or "@googlemail.com" email addresses.
 
-Exactly as for the non-gmail equivalents, except that reporting is only for those users with "@gmail.com" email addresses.
+### yahoo_recipients, yahoo_delivered, yahoo_opened, yahoo_clicked_total, yahoo_clicked_unique
 
+For those users with "@yahoo.com" email addresses.
+
+### hotmail_recipients, hotmail_delivered, hotmail_opened, hotmail_clicked_total, hotmail_clicked_unique
+
+For those users with "@hotmail.com" email addresses.
 
 ### unsubscribed
 
