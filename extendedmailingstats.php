@@ -339,14 +339,14 @@ function _extendedmailingstats_cron_event($params, $task, $spec)
 
     $data_model_str = '';
 
-    if (strncmp($spec['event_type'], 'civicrm_mailing_event_', 22)) {
+    if (!strncmp($spec['event_type'], 'civicrm_mailing_event_', 22)) {
         $data_model_str .= "civicrm_mailing_job AS j
     JOIN civicrm_mailing_event_queue AS eq
       ON eq.job_id = j.id
     JOIN ${event_type} eqrec
       ON eqrec.event_queue_id = eq.id 
     ${mailbox_type_str}";
-    } else if (strcmp($spec['event_type'], 'civicrm_mailing_recipients')) {
+    } else if (!strcmp($spec['event_type'], 'civicrm_mailing_recipients')) {
         $data_model_str .= "civicrm_mailing_recipients AS r
     JOIN civicrm_mailing_job AS j ON j.mailing_id = r.mailing_id
     JOIN civicrm_mailing_event_queue AS eq
