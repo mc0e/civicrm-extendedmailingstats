@@ -326,15 +326,15 @@ function _extendedmailingstats_cron_event($params, $task, $spec)
     if ($mailbox_type == 1) {
         $mailbox_type_str = "JOIN civicrm_email e
       ON e.id = eq.email_id
-     WHERE (e.email LIKE '%gmail.com' OR e.email LIKE '%googlemail.com')";
+     WHERE (LOWER(TRIM(e.email)) LIKE '%@gmail.com' OR LOWER(TRIM(e.email)) LIKE '%@googlemail.com')";
     } else if ($mailbox_type == 2) {
         $mailbox_type_str = "JOIN civicrm_email e
       ON e.id = eq.email_id
-     WHERE e.email LIKE '%yahoo.com'";
+     WHERE LOWER(e.email) LIKE '%@yahoo.%'";
     } else if ($mailbox_type == 3) {
         $mailbox_type_str = "JOIN civicrm_email e
       ON e.id = eq.email_id
-     WHERE e.email LIKE '%hotmail.com'";
+     WHERE LOWER(e.email) LIKE '%@hotmail.%'";
     }
 
     $data_model_str = '';
