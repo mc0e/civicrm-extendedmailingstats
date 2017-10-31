@@ -45,6 +45,7 @@ The cron job should run as the web server user.
  * delivered 
  * bounced 
  * opened 
+ * opened_unique
  * unsubscribed 
  * forwarded 
  * clicked_total 
