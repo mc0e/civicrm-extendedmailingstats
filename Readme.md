@@ -57,16 +57,19 @@ The cron job should run as the web server user.
  * gmail_recipients 
  * gmail_delivered 
  * gmail_opened 
+ * gmail_opened_unique 
  * gmail_clicked_total 
  * gmail_clicked_unique
  * yahoo_recipients 
  * yahoo_delivered 
  * yahoo_opened 
+ * yahoo_opened_unique
  * yahoo_clicked_total 
  * yahoo_clicked_unique
  * hotmail_recipients 
  * hotmail_delivered 
  * hotmail_opened 
+ * hotmail_opened_unique
  * hotmail_clicked_total 
  * hotmail_clicked_unique
 
