@@ -236,11 +236,29 @@ function _extendedmailingstats_cron($params)
             'mailbox_type' => 0,
         )
     );
+    _extendedmailingstats_cron_event($params, 'Opened Unique',
+        array(
+            'event_type' => "civicrm_mailing_event_opened",
+            'select' => array(
+                "opened_unique" => "count(distinct eq.contact_id)",
+            ),
+            'mailbox_type' => 0,
+        )
+    );
     _extendedmailingstats_cron_event($params, 'Gmail Opened',
         array(
             'event_type' => "civicrm_mailing_event_opened",
             'select' => array(
                 "gmail_opened" => "count(eqrec.id)",
+            ),
+            'mailbox_type' => 1,
+        )
+    );
+    _extendedmailingstats_cron_event($params, 'Gmail Opened Unique',
+        array(
+            'event_type' => "civicrm_mailing_event_opened",
+            'select' => array(
+                "gmail_opened_unique" => "count(distinct eq.contact_id)",
             ),
             'mailbox_type' => 1,
         )
@@ -254,11 +272,29 @@ function _extendedmailingstats_cron($params)
             'mailbox_type' => 2,
         )
     );
+    _extendedmailingstats_cron_event($params, 'Yahoo Opened Unique',
+        array(
+            'event_type' => "civicrm_mailing_event_opened",
+            'select' => array(
+                "yahoo_opened_unique" => "count(distinct eq.contact_id)",
+            ),
+            'mailbox_type' => 2,
+        )
+    );
     _extendedmailingstats_cron_event($params, 'Hotmail Opened',
         array(
             'event_type' => "civicrm_mailing_event_opened",
             'select' => array(
                 "hotmail_opened" => "count(eqrec.id)",
+            ),
+            'mailbox_type' => 3,
+        )
+    );
+    _extendedmailingstats_cron_event($params, 'Hotmail Opened Unique',
+        array(
+            'event_type' => "civicrm_mailing_event_opened",
+            'select' => array(
+                "hotmail_opened_unique" => "count(distinct eq.contact_id)",
             ),
             'mailbox_type' => 3,
         )
