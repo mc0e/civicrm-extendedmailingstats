@@ -102,6 +102,10 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
           'title' => ts('Opened'),
           'default' => TRUE,
         ),
+        'opened_unique' => array(
+          'title' => ts('Opened Unique'),
+          'default' => TRUE,
+        ),
         'unsubscribed' => array(
           'title' => ts('Unsubscribed'),
           'default' => TRUE,
@@ -147,6 +151,10 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
           'title' => ts('Gmail Opened'),
           'default' => TRUE,
         ),
+        'gmail_opened_unique' => array(
+          'title' => ts('Gmail Opened Unique'),
+          'default' => TRUE,
+        ),
         'gmail_clicked_total' => array(
           'title' => ts('Gmail Clicked Total'),
           'default' => TRUE,
@@ -168,6 +176,10 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
 	        'title' => ts('Yahoo Opened'),
 	        'default' => TRUE,
         ),
+        'yahoo_opened_unique' => array(
+	        'title' => ts('Yahoo Opened Unique'),
+	        'default' => TRUE,
+        ),
         'yahoo_clicked_total' => array(
 	        'title' => ts('Yahoo Clicked Total'),
 	        'default' => TRUE,
@@ -187,6 +199,10 @@ class CRM_ExtendedMailingStats_Form_Report_ExtendedMailingStats extends CRM_Repo
         ),
         'hotmail_opened' => array(
 	        'title' => ts('Hotmail Opened'),
+	        'default' => TRUE,
+        ),
+        'hotmail_opened_unique' => array(
+	        'title' => ts('Hotmail Opened Unique'),
 	        'default' => TRUE,
         ),
         'hotmail_clicked_total' => array(
