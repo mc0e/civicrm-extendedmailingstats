@@ -122,9 +122,9 @@ The number of different trackable URLs in the mailing.  Note that this counts th
 
 CiviCRM embeds a transparent single pixel image in sent emails, so that whenever that email is displayed, the image is loaded from civicrm, and an event is recorded, identifying the mailing, the user the email was sent to and a timestamp.
 
-Current: For each mailing, This field currently records the number of such events.  Ie if the same user opens the email more than once, it is counted multiple times.
+Total Opened: For each mailing, this field records the number of such events, i.e. if the same user opens the email more than once, it is counted multiple times.
 
-Proposed change:  Count only once for each user.  Rename as "Users who Opened"
+Unique Opened: Counts only once for each user, i.e. if the same user opens more than once, it is counted only one time.
 
 
 ### clicked_total, clicked_unique
@@ -155,11 +155,11 @@ Exactly as for the non-gmail equivalents, except that reporting is only for thos
 
 ### yahoo_recipients, yahoo_delivered, yahoo_opened, yahoo_clicked_total, yahoo_clicked_unique
 
-For those users with "@yahoo.com" email addresses.
+For those users with "@yahoo." email addresses.
 
 ### hotmail_recipients, hotmail_delivered, hotmail_opened, hotmail_clicked_total, hotmail_clicked_unique
 
-For those users with "@hotmail.com" email addresses.
+For those users with "@hotmail." email addresses.
 
 ### unsubscribed
 
