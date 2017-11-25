@@ -242,7 +242,7 @@ class CRM_ExtendedMailingStats_Upgrader_Base {
   // ******** Hook delegates ********
 
   public function onInstall() {
-    $files = glob($this->extensionDir . '/sql/*_install.sql');
+    $files = glob($this->extensionDir . '/sql/mailing_stats__install.sql');
     if (is_array($files)) {
       foreach ($files as $file) {
         CRM_Utils_File::sourceSQLFile(CIVICRM_DSN, $file);
@@ -267,7 +267,7 @@ class CRM_ExtendedMailingStats_Upgrader_Base {
     if (is_callable(array($this, 'uninstall'))) {
       $this->uninstall();
     }
-    $files = glob($this->extensionDir . '/sql/*_uninstall.sql');
+    $files = glob($this->extensionDir . '/sql/mailing_stats__uninstall.sql');
     if (is_array($files)) {
       foreach ($files as $file) {
         CRM_Utils_File::sourceSQLFile(CIVICRM_DSN, $file);

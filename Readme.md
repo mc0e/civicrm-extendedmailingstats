@@ -45,6 +45,7 @@ The cron job should run as the web server user.
  * delivered 
  * bounced 
  * opened 
+ * opened_unique
  * unsubscribed 
  * forwarded 
  * clicked_total 
@@ -56,8 +57,21 @@ The cron job should run as the web server user.
  * gmail_recipients 
  * gmail_delivered 
  * gmail_opened 
+ * gmail_opened_unique 
  * gmail_clicked_total 
  * gmail_clicked_unique
+ * yahoo_recipients 
+ * yahoo_delivered 
+ * yahoo_opened 
+ * yahoo_opened_unique
+ * yahoo_clicked_total 
+ * yahoo_clicked_unique
+ * hotmail_recipients 
+ * hotmail_delivered 
+ * hotmail_opened 
+ * hotmail_opened_unique
+ * hotmail_clicked_total 
+ * hotmail_clicked_unique
 
 
 ### Mailing Name
@@ -108,9 +122,9 @@ The number of different trackable URLs in the mailing.  Note that this counts th
 
 CiviCRM embeds a transparent single pixel image in sent emails, so that whenever that email is displayed, the image is loaded from civicrm, and an event is recorded, identifying the mailing, the user the email was sent to and a timestamp.
 
-Current: For each mailing, This field currently records the number of such events.  Ie if the same user opens the email more than once, it is counted multiple times.
+Total Opened: For each mailing, this field records the number of such events, i.e. if the same user opens the email more than once, it is counted multiple times.
 
-Proposed change:  Count only once for each user.  Rename as "Users who Opened"
+Unique Opened: Counts only once for each user, i.e. if the same user opens more than once, it is counted only one time.
 
 
 ### clicked_total, clicked_unique
@@ -134,11 +148,18 @@ Total Clicks semantics currently lines up pretty well with its name, but may not
 
 "Unique" is vague.  Unique combination of what?  Maybe we want better naming. eg "Click-through Events", "Users Who Clicked", and one that also counts separately clicks on different urls by the same user (how should we label that?).
 
+
 ### gmail_recipients, gmail_delivered, gmail_opened, gmail_clicked_total, gmail_clicked_unique
 
+Exactly as for the non-gmail equivalents, except that reporting is only for those users with "@gmail.com" or "@googlemail.com" email addresses.
 
-Exactly as for the non-gmail equivalents, except that reporting is only for those users with "@gmail.com" email addresses.
+### yahoo_recipients, yahoo_delivered, yahoo_opened, yahoo_clicked_total, yahoo_clicked_unique
 
+For those users with "@yahoo." email addresses.
+
+### hotmail_recipients, hotmail_delivered, hotmail_opened, hotmail_clicked_total, hotmail_clicked_unique
+
+For those users with "@hotmail." email addresses.
 
 ### unsubscribed
 
